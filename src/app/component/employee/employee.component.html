@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-header>
+        <!-- <h2>Lisitra mpiasa</h2> -->
+        <button mat-raised-button (click)="addEmployee()">Manampy</button>
+    </mat-card-header>
+    <mat-card-content>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Laharana </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Anarana </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="salary">
+                <th mat-header-cell *matHeaderCellDef> Karama </th>
+                <td mat-cell *matCellDef="let element"> {{element.salary | salary}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="doj">
+                <th mat-header-cell *matHeaderCellDef> Daty nidirana </th>
+                <td mat-cell *matCellDef="let element"> {{element.doj | date:'fullDate'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Andraikitra </th>
+                <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element" class="action-button-container">
+                    <button mat-raised-button color="primary" (click)="editEmployee(element)">Hanintsy</button>
+                    <button mat-raised-button color="accent" (click)="deleteEmployee(element)">Mamafa</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+
+
+    </mat-card-content>
+</mat-card>

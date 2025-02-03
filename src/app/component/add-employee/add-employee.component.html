@@ -1,0 +1,45 @@
+<form [formGroup]="empForm" (ngSubmit)="saveEmployee()">
+    <mat-card>
+        <mat-card-header>
+            <h2>{{title}}</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Laharana</mat-label>
+                <input matInput formControlName="id" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Anarana</mat-label>
+                <input matInput formControlName="name" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Karama</mat-label>
+                <input matInput formControlName="salary" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Daty nidirana</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="doj">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Anjara asa</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option value="">Misafidiana anjara asa</mat-option>
+                    <mat-option value="manager">Manajera</mat-option>
+                    <mat-option value="lead">Mpitarika</mat-option>
+                    <mat-option value="operator">Mpamita hiraka</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary">Ampidirina</button>
+            <a mat-raised-button color="accent" (click)="closePopup()">Mamerina</a>
+        </mat-card-actions>
+    </mat-card>
+</form>
