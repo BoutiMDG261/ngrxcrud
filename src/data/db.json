@@ -2,14 +2,14 @@
   "employee": [
     {
       "id": "1",
-      "name": "Marco",
+      "name": "Rabouti",
       "doj": "2016-05-31T22:00:00.000Z",
       "role": "lead",
       "salary": "4000000"
     },
     {
       "id": "2",
-      "name": "Oni",
+      "name": "Rabou",
       "doj": "2018-07-22T22:00:00.000Z",
       "role": "manager",
       "salary": "5300000"
@@ -23,7 +23,7 @@
     },
     {
       "id": "6",
-      "name": "Andry Raj",
+      "name": "Ra",
       "doj": "2025-02-02T23:00:00.000Z",
       "role": "operator",
       "salary": "100"
